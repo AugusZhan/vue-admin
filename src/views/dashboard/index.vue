@@ -1,3 +1,5 @@
 <template>
-  <div>1</div>
+  <div>
+    <svg-icon icon-class='dashboard'></svg-icon>
+  </div>
 </template>

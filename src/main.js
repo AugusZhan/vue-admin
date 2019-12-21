@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 
+import './icons'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/variables.scss'
 import '@/styles/index.scss'
