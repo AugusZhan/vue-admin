@@ -7,7 +7,7 @@
       </template>
       <side-Item v-for="subItem in item.children" :key="subItem.path" :item='subItem'/>
     </el-submenu>
-    <el-menu-item v-else-if='isOnlyHasOneChild(item.children) && !item.hidden' :index="item.path">
+    <el-menu-item v-if='isOnlyHasOneChild(item.children) && !item.hidden' :index="item.path">
       <i class="el-icon-location"></i>
       <span slot='title'>{{item.meta.title}}</span>
     </el-menu-item>
@@ -29,7 +29,7 @@ export default {
   },
   methods:{
     isOnlyHasOneChild(childs) {
-      if(childs && childs.length === 1){
+      if(!childs || childs && childs.length === 1){
         return true
       }else {
         return false

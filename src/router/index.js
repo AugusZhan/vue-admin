@@ -35,13 +35,13 @@ const Routes = [
     meta:{title:'UserSetting',icon:''},
     children:[
       {
-        path:'user/management',
+        path:'/user/management',
         name:'UserManagement',
         component: ()=>import('@/views/user/management/index'),
         meta:{title:'UserManagement',icon:'user'}
       },
       {
-        path:'user/authority',
+        path:'/user/authority',
         name:'UserAuthority',
         component: ()=>import('@/views/user/authority/index'),
         meta:{title:'UserAuthority',icon:'user'}

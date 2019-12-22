@@ -3,7 +3,7 @@
     <div class="drawer-bg" @click="handleClickOutSide"/>
     <side-bar class="sidebar-container"/>
     <div class='main-container'>
-      <div class="header-container">
+      <div class='fixed-header'>
         <nav-bar/>
       </div>
       <app-main/>
@@ -51,6 +51,5 @@ export default {
     z-index: 9;
     width: calc(100% - #{$sideBarWidth});
     transition: width 0.28s;
-    background-color: red
 }
 </style>
