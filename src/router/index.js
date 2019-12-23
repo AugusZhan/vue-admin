@@ -44,8 +44,8 @@ const Routes = [
         path:'/user/authority',
         name:'UserAuthority',
         component: ()=>import('@/views/user/authority/index'),
-        meta:{title:'UserAuthority',icon:'user'}
-      }
+        meta:{title:'UserAuthority',icon:'user'} 
+      },
     ]
   }
 ]
@@ -54,6 +54,10 @@ const router = new Router({
   routes: Routes
 })
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 export default router
 
 

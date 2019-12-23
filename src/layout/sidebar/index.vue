@@ -6,7 +6,6 @@
       :text-color="menuText"
       :active-text-color="menuActiveText"
       :collapse-transition="false"
-      :router='true'
       mode="vertical">
       <side-item v-for="route in routes" :key="route.path" :item="route"/>
     </el-menu>
