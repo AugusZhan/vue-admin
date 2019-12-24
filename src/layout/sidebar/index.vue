@@ -15,6 +15,7 @@
 <script>
 import variables from '@/styles/variables.scss'
 import SideItem from './components/sideItem'
+import { mapGetters } from 'vuex'
 export default {
   name:'SideBar',
   components:{
@@ -22,15 +23,20 @@ export default {
   },
   data:function(){
     return {
-      isCollapse: false,
       menuBg: variables.menuBg,
       menuText: variables.menuText,
       menuActiveText: variables.menuActiveText
     }
   },
   computed :{
+    ...mapGetters([
+      'sidebar'
+    ]),
     routes() {
       return this.$router.options.routes
+    },
+    isCollapse() {
+      return this.sidebar.isOpen
     }
   }
 }

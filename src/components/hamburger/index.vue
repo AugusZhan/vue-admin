@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     toggleClick(){
-
+      this.$store.dispatch('toggleSidebarOpen')
     }
   }
 }

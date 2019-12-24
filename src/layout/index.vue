@@ -1,6 +1,5 @@
 <template>
-  <div class="app-wrapper">
-    <div class="drawer-bg" @click="handleClickOutSide"/>
+  <div class="app-wrapper" :class='classObj'>
     <side-bar class="sidebar-container"/>
     <div class='main-container'>
       <div class='fixed-header'>
@@ -21,15 +20,19 @@ export default {
     AppMain,
     NavBar
   },
-  data: function () {
-    return {
-      
+  computed:{
+    sidebar(){
+      return this.$store.state.app.sidebar
+    },
+    classObj(){
+      return {
+        hideSidebar: this.sidebar.isOpen,
+        openSidebar: !this.sidebar.isOpen
+      }
     }
   },
   methods:{
-    handleClickOutSide(){
 
-    }
   }
 }
 </script>
@@ -51,5 +54,9 @@ export default {
     z-index: 9;
     width: calc(100% - #{$sideBarWidth});
     transition: width 0.28s;
+}
+
+.hideSidebar .fixed-header {
+   width: calc(100% - 54px);
 }
 </style>
