@@ -19,13 +19,12 @@ const Routes = [
     path:'/',
     component: Layout,
     redirect: '/dashboard',
-    meta:{title:'Dashboard',icon:'dashboard'},
+    meta:{title:'dashboard',icon:'dashboard'},
     children:[
       {
         path:'dashboard',
         name:'Dashboard',
-        component: ()=>import('@/views/dashboard/index'),
-        meta:{title:'Dashboard',icon:'dashboard'},    
+        component: ()=>import('@/views/dashboard/index')   
       }
     ]
   },
@@ -33,20 +32,46 @@ const Routes = [
     path:'/user',
     component: Layout,
     redirect: '/user/management',
-    meta:{title:'UserSetting',icon:''},
+    meta:{title:'safeSetting',icon:''},
     children:[
       {
         path:'/user/management',
-        name:'UserManagement',
         component: ()=>import('@/views/user/management/index'),
-        meta:{title:'UserManagement',icon:'user'}
+        meta:{title:'userManagement',icon:'user'}
       },
       {
-        path:'/user/authority',
-        name:'UserAuthority',
+        path:'/user/group',
         component: ()=>import('@/views/user/authority/index'),
-        meta:{title:'UserAuthority',icon:'user'} 
+        meta:{title:'userGroup',icon:'user'} 
       },
+    ]
+  },
+  {
+    path:'/basic',
+    component: Layout,
+    redirect: '/user/param',
+    meta:{title:'basicSetting',icon:''},
+    children:[
+      {
+        path:'/user/param',
+        component: ()=>import('@/views/basic/user/param'),
+        meta:{title:'userParam',icon:'user'}
+      },
+      {
+        path:'/user/value',
+        component: ()=>import('@/views/basic/user/value'),
+        meta:{title:'userParamValue',icon:'user'} 
+      },
+      {
+        path:'/sys/param',
+        component: ()=>import('@/views/basic/sys/param'),
+        meta:{title:'sysParam',icon:'user'}
+      },
+      {
+        path:'/sys/value',
+        component: ()=>import('@/views/basic/sys/value'),
+        meta:{title:'sysParamValue',icon:'user'} 
+      }
     ]
   }
 ]

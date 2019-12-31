@@ -3,13 +3,13 @@
     <el-submenu v-if="!isOnlyHasOneChild(item.children) && !item.hidden" :index="item.path">
       <template slot='title'>
         <i class="el-icon-location"></i>
-        <span slot='title'>{{item.meta.title}}</span>
+        <span slot='title'>{{$t(handleTitle(item.meta.title))}}</span>
       </template>
       <side-Item v-for="subItem in item.children" :key="subItem.path" :item='subItem'/>
     </el-submenu>
     <el-menu-item v-if='isOnlyHasOneChild(item.children) && !item.hidden' :index="item.path">
       <i class="el-icon-location"></i>
-      <span slot='title'>{{item.meta.title}}</span>
+      <span slot='title'>{{$t(handleTitle(item.meta.title))}}</span>
     </el-menu-item>
   </div>
 </template>
@@ -34,6 +34,9 @@ export default {
       }else {
         return false
       }
+    },
+    handleTitle(str){
+      return "menu."+str
     }
   }
 }
