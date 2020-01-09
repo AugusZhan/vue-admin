@@ -34,13 +34,18 @@ const zh = {
     operator:'操作',
     detail:'详情',
     sequence:'序列',
-    description:'描述'
+    description:'描述',
+    showValue:'显示值'
   },
   basic:{
     paramName:'参数名',
     paramList:'参数列表',
     paramDetail:'参数详情',
-    displayProp:'显示属性'
+    displayProp:'显示属性',
+    paramValueList:'参数值列表',
+    paramValueDetail:'参数值详情',
+    paramValue:'参数值',
+   
   }
 }
 
