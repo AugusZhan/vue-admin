@@ -1,7 +1,7 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item to='/'>Dashboard</el-breadcrumb-item>
-    <el-breadcrumb-item v-for='bread in breads' :key='bread.path' :to='bread.path'>{{bread.meta.title}}</el-breadcrumb-item>
+    <el-breadcrumb-item to='/'>{{$t('menu.dashboard')}}</el-breadcrumb-item>
+    <el-breadcrumb-item v-for='bread in breads' :key='bread.path' :to='bread.path'>{{$t(handlerBread(bread.meta.title))}}</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 <script>
@@ -25,6 +25,9 @@ export default {
       let matches = this.$route.matched
       let isFirst = matches.some(x => x.path.includes("dashboard"))
       this.breads = isFirst ? [] : matches
+    },
+    handlerBread(title){
+      return 'menu.'+title
     }
   }
 }

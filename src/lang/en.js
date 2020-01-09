@@ -21,7 +21,18 @@ const en = {
     editor:'editor'
   },
   input:{
-    
+    userParam:'Please input user paramName'
+  },
+  label:{
+    operator:'operator',
+    detail:'detail',
+    sequence:'sequence',
+    description:'description'
+  },
+  basic:{
+    paramName:'paramName',
+    paramList:'paramList',
+    paramDetail:'paramDetail'
   }
 }
 

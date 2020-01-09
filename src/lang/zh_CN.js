@@ -14,16 +14,33 @@ const zh = {
     name:'用户名',
     group:'用户组',
     code:'用户代码',
-    comment:'备注'
+    comment:'备注',
   },
   btn:{
     query:'查询',
     remove:'移除',
     add:'添加',
-    editor:'编辑'
+    editor:'编辑',
+    watch:'查看',
+    reset:'重置',
+    save:'保存'
   },
   input:{
-
+    userName:'请输入用户名',
+    userGroup:'请输入用户组名',
+    userParam:'请输入用户参数名'
+  },
+  label:{
+    operator:'操作',
+    detail:'详情',
+    sequence:'序列',
+    description:'描述'
+  },
+  basic:{
+    paramName:'参数名',
+    paramList:'参数列表',
+    paramDetail:'参数详情',
+    displayProp:'显示属性'
   }
 }
 
