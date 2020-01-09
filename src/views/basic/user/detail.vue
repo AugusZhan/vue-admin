@@ -5,7 +5,7 @@
         <span>{{$t('basic.paramName')}}</span>
       </el-col>
       <el-col :span="18">
-        <el-input v-model="copyDatail.paramName" autofocus/><br>
+        <el-input v-model="copyDetail.paramName" autofocus/><br>
       </el-col>
     </el-row>
     <el-row :gutter="12">
@@ -13,7 +13,7 @@
         <span>{{$t('basic.displayProp')}}</span>
       </el-col>
       <el-col :span="18">
-        <el-input v-model="copyDatail.displayProp"/><br>
+        <el-input v-model="copyDetail.displayProp"/><br>
       </el-col>
     </el-row>
     <el-row :gutter="12">
@@ -21,13 +21,13 @@
         <span>{{$t('label.description')}}</span>
       </el-col>
       <el-col :span="18">
-        <el-input type="textarea" v-model="copyDatail.description"/><br>
+        <el-input type="textarea" v-model="copyDetail.description"/><br>
       </el-col>
     </el-row>
     <el-row>
       <el-col :sm='4' :md='6'>
         <el-button type='primary' @click="operateHandler('RESET')">{{$t("btn.reset")}}</el-button>
-        <el-button type='primary' @click="operateHandler('UPDATE')">{{$t("btn.save")}}</el-button>
+        <el-button type='primary' @click="operateHandler(actionType)">{{$t("btn.save")}}</el-button>
       </el-col>
     </el-row>
   </div>
@@ -40,11 +40,15 @@ export default {
     detailData:{
       type:Object,
       default:()=>{}
+    },
+    actionType:{
+      type:String,
+      default:()=>''
     }
   },
   data:function(){
     return{
-      copyDatail:{}
+      copyDetail:{}
     }
   },
   created(){
@@ -58,11 +62,11 @@ export default {
         this.copyDetail = Object.assign({},this.detailData)
       }else{
         let condition = {
-          basParam:this.detailData,
+          basParam:this.copyDetail,
           actionType:actionType
         }
-        operateBasParam(condition).then(res=>{
-          this.copyDatail = Object.assign({},this.detailData)
+        operateBasParam(condition).then(()=>{
+          this.$emit('detailHandler',this.actionType,this.copyDetail)
         })
       }
     }
