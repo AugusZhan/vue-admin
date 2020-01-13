@@ -3,3 +3,4 @@
     dashboard
   </div>
 </template>
+<script>

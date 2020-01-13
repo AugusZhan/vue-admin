@@ -6,16 +6,6 @@ Vue.use(Router)
 
 const Routes = [
   {
-    path:'/login',
-    component:()=>import('@/views/other/login'),
-    hidden:true
-  },
-  {
-    path:'/404',
-    component:() => import('@/views/other/404'),
-    hidden:true
-  },
-  {
     path:'/',
     component: Layout,
     redirect: '/dashboard',
@@ -24,53 +14,43 @@ const Routes = [
       {
         path:'dashboard',
         name:'Dashboard',
-        component: ()=>import('@/views/dashboard/index')   
+        component: ()=>import('@/views/common/dashboard')   
       }
     ]
   },
   {
-    path:'/user',
+    path:'/security',
     component: Layout,
-    redirect: '/user/management',
-    meta:{title:'safeSetting',icon:''},
+    redirect: '/security/user',
+    meta:{title:'securitySetting',icon:''},
     children:[
       {
-        path:'/user/management',
-        component: ()=>import('@/views/user/management/index'),
-        meta:{title:'userManagement',icon:'user'}
+        path:'/security/user',
+        component: ()=>import('@/views/common/security/user'),
+        meta:{title:'userSetting',icon:'user'}
       },
       {
         path:'/user/group',
-        component: ()=>import('@/views/user/authority/index'),
-        meta:{title:'userGroup',icon:'user'} 
+        component: ()=>import('@/views/common/security/usergroup'),
+        meta:{title:'groupSetting',icon:'user'} 
       },
     ]
   },
   {
     path:'/basic',
     component: Layout,
-    redirect: '/user/param',
+    redirect: '/basic/param',
     meta:{title:'basicSetting',icon:''},
     children:[
       {
-        path:'/user/param',
-        component: ()=>import('@/views/basic/user/param'),
-        meta:{title:'userParam',icon:'user'}
+        path:'/basic/param',
+        component: ()=>import('@/views/common/basic/param'),
+        meta:{title:'paramSetting',icon:'user'}
       },
       {
-        path:'/user/value',
-        component: ()=>import('@/views/basic/user/value'),
-        meta:{title:'userParamValue',icon:'user'} 
-      },
-      {
-        path:'/sys/param',
-        component: ()=>import('@/views/basic/sys/param'),
-        meta:{title:'sysParam',icon:'user'}
-      },
-      {
-        path:'/sys/value',
-        component: ()=>import('@/views/basic/sys/value'),
-        meta:{title:'sysParamValue',icon:'user'} 
+        path:'/basic/rule',
+        component: ()=>import('@/views/common/basic/rule'),
+        meta:{title:'ruleSetting',icon:'user'}
       }
     ]
   }

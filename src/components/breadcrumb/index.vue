@@ -1,6 +1,6 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item to='/'>{{$t('menu.dashboard')}}</el-breadcrumb-item>
+    <el-breadcrumb-item to='/'>{{$t('common.menu.dashboard')}}</el-breadcrumb-item>
     <el-breadcrumb-item v-for='bread in breads' :key='bread.path' :to='bread.path'>{{$t(handlerBread(bread.meta.title))}}</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
@@ -27,7 +27,7 @@ export default {
       this.breads = isFirst ? [] : matches
     },
     handlerBread(title){
-      return 'menu.'+title
+      return 'common.menu.'+title
     }
   }
 }

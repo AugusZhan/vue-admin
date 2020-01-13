@@ -1,0 +1,54 @@
+const common = {
+  menu:{
+    dashboard:'首页',
+    securitySetting:'安全设置',
+    userSetting:'用户管理',
+    groupSetting:'用户组管理',
+    basicSetting:'基础设置',
+    ruleSetting:'规则设置',
+    paramSetting:'参数设置'
+  },
+  user:{
+    name:'用户名',
+    group:'用户组',
+    code:'用户代码',
+    remark:'备注',
+  },
+  btn:{
+    query:'查询',
+    remove:'移除',
+    add:'添加',
+    editor:'编辑',
+    view:'查看',
+    reset:'重置',
+    save:'保存',
+    import:'导入',
+    export:'导出'
+  },
+  label:{
+    operate:'操作',
+    detail:'详情',
+    sequence:'序号',
+    description:'描述',
+    category:'类别',
+    refresh:'刷新'
+  },
+  param:{
+    name:'参数名',
+    list:'参数列表',
+    detail:'参数详情',
+    prop:'显示属性',
+    valueList:'参数值列表',
+    valueDetail:'参数值详情',
+    value:'参数值',
+    showValue:'显示值'
+  },
+  input:{
+    userName:'请输入用户名',
+    userGroup:'请输入用户组名',
+    paramName:'请输入参数名',
+    category:'请输入类别'
+  },
+}
+
+export default common

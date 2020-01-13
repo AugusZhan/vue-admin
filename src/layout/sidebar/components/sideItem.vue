@@ -36,7 +36,7 @@ export default {
       }
     },
     handleTitle(str){
-      return "menu."+str
+      return "common.menu."+str
     }
   }
 }

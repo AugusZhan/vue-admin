@@ -1,33 +1,25 @@
 <template>
   <div id="container">
-    <el-row :gutter="12">
-      <el-col :span="2">
-        <span>{{$t('basic.paramName')}}</span>
-      </el-col>
-      <el-col :span="18">
-        <el-input v-model="copyDetail.paramName" autofocus/><br>
-      </el-col>
-    </el-row>
-    <el-row :gutter="12">
-      <el-col :span="2">
-        <span>{{$t('basic.displayProp')}}</span>
-      </el-col>
-      <el-col :span="18">
-        <el-input v-model="copyDetail.displayProp"/><br>
-      </el-col>
-    </el-row>
-    <el-row :gutter="12">
-      <el-col :span="2">
-        <span>{{$t('label.description')}}</span>
-      </el-col>
-      <el-col :span="18">
-        <el-input type="textarea" v-model="copyDetail.description"/><br>
-      </el-col>
-    </el-row>
+    <el-form :model="copyDetail" label-position="right" label-width="80px">
+      <el-form-item :label="$t('common.param.name')">
+        <el-input v-model="copyDetail.paramName" autofocus/>
+      </el-form-item>
+      <el-form-item :label="$t('common.label.category')">
+        <el-input v-model="copyDetail.category" :disabled="'UPDATE'==actionType"/>
+      </el-form-item>
+      <el-form-item :label="$t('common.param.prop')">
+        <el-input v-model="copyDetail.displayProp"/>
+      </el-form-item>
+      <el-form-item :label="$t('common.label.description')">
+        <el-input v-model="copyDetail.description"/>
+      </el-form-item>
+    </el-form>
     <el-row>
-      <el-col :sm='4' :md='6'>
-        <el-button type='primary' @click="operateHandler('RESET')">{{$t("btn.reset")}}</el-button>
-        <el-button type='primary' @click="operateHandler(actionType)">{{$t("btn.save")}}</el-button>
+      <el-col :sm='3' :md='2' :offset="2">
+        <el-button type='primary' @click="operateHandler('RESET')">{{$t("common.btn.reset")}}</el-button>
+      </el-col>
+      <el-col :sm='3' :md='2'>
+        <el-button type='primary' @click="operateHandler(actionType)">{{$t("common.btn.save")}}</el-button>
       </el-col>
     </el-row>
   </div>
@@ -54,6 +46,7 @@ export default {
   created(){
     this.$nextTick().then(()=>{
       this.operateHandler('RESET')
+      console.log(this.actionType)
     })
   },
   methods:{

@@ -4,7 +4,6 @@ axios.defaults.baseURL='/api'
 const service = axios.create({
   timeout:100000,
   headers:{'Content-Type': 'application/json'},
-  method:'post'
 })
 
 service.interceptors.request.use(
